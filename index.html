@@ -1,0 +1,181 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Fundo suave com degradê pastel */
+        body {
+            background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Caixa de login com bordas suaves */
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+            color: #333;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #5c6bc0;
+            transition: transform 0.3s;
+        }
+
+        .login-container h1:hover {
+            transform: scale(1.1);
+        }
+
+        .login-container label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #5c6bc0;
+        }
+
+        /* Campos de entrada interativos */
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #b0bec5;
+            border-radius: 5px;
+            font-size: 16px;
+            background: #eceff1;
+            color: #333;
+            transition: 0.3s ease;
+        }
+
+        .login-container input:focus {
+            outline: none;
+            border-color: #5c6bc0;
+            box-shadow: 0 0 8px rgba(92, 107, 192, 0.7);
+            transform: scale(1.05);
+        }
+
+        /* Links estilizados */
+        .login-container a {
+            display: block;
+            color: #5c6bc0;
+            text-decoration: none;
+            margin-bottom: 15px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .login-container a:hover {
+            color: #3949ab;
+            transform: scale(1.05);
+        }
+
+        /* Botão com efeito arco-íris ao passar o mouse e pulando */
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: #5c6bc0;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .login-container button:hover {
+            animation: rainbowEffect 1.5s infinite linear, bounce 0.5s infinite alternate;
+        }
+
+        @keyframes rainbowEffect {
+            0% { background: #ff0000; }
+            14% { background: #ff7f00; }
+            28% { background: #ffff00; }
+            42% { background: #00ff00; }
+            57% { background: #0000ff; }
+            71% { background: #4b0082; }
+            85% { background: #8b00ff; }
+            100% { background: #ff0000; }
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-5px);
+            }
+        }
+
+        .register-text {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .register-text a {
+            color: #5c6bc0;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .register-text a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsividade */
+        @media (max-width: 400px) {
+            .login-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>Bem-vindo ao Nexus! 🚀</h1>
+        <p>Gerencie suas finanças de forma inteligente.</p>
+
+        <form action="dashboard.html" method="POST">
+
+            <input type="text" id="nome" placeholder="Digite seu nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Digite seu email" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" placeholder="Digite sua senha" required>
+
+            <a href="https://www.nexus.com.br">Esqueci minha senha</a>
+
+            <button type="submit">Entrar!</button>
+        </form>
+
+        <p class="register-text">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+    </div>
+
+</body>
+</html>
+
