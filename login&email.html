@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador Financeiro</title>
+    <script>
+        function login() {
+            const email = document.getElementById("email").value;
+            const senha = document.getElementById("senha").value;
+
+            if (email && senha) {
+                alert("Login realizado com sucesso! Agora, por favor, insira o código enviado por email.");
+                // Aqui seria feito o envio de código via email, mas vamos simular.
+                document.getElementById("codigo").style.display = "block";
+            }
+        }
+
+        function verificarCodigo() {
+            const codigo = document.getElementById("codigo_num").value;
+            if (codigo == "123456") {
+                alert("Autenticação de dois fatores concluída.");
+                // Aqui seria redirecionado para o painel de controle, por exemplo
+            } else {
+                alert("Código incorreto. Tente novamente.");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Login - Gerenciador Financeiro</h1>
+
+    <div id="login-form">
+        <input type="email" id="email" placeholder="Email" required><br>
+        <input type="password" id="senha" placeholder="Senha" required><br>
+        <button onclick="login()">Entrar</button>
+    </div>
+
+    <div id="codigo" style="display:none;">
+        <input type="text" id="codigo_num" placeholder="Código de Acesso" required><br>
+        <button onclick="verificarCodigo()">Verificar Código</button>
+    </div>
+
+</body>
+</html>
